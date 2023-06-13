@@ -1,9 +1,7 @@
 #include <bits/stdc++.h>
-using namespace std;
-
-vector<int> generateRow(int row){
+vector<long long int> generateRow(int row){
   long long ans = 1;
-  vector<int> RowAns;
+  vector<long long int> RowAns;
   RowAns.push_back(1);
   for(int col=1;col<row;col++){
     ans = ans*(row-col);
@@ -14,8 +12,8 @@ vector<int> generateRow(int row){
   return RowAns;
 }
 
-vector<vector<int>> printPascal(int n){
-  vector<vector<int>> ans;
+vector<vector<long long int>> printPascal(int n){
+  vector<vector<long long int>> ans;
 
   for(int i=1;i<=n;i++){
     ans.push_back(generateRow(i));
