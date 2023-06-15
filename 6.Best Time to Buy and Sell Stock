@@ -1,0 +1,39 @@
+class Solution {
+public:
+
+    void profit(vector<int>& prices,int i,int &minPrice,int &MaxProfit){
+
+        //base case
+
+        if(i==prices.size())
+            return ;
+        
+        //ek case
+
+        if(prices[i]<minPrice)
+            minPrice= prices[i];
+
+        int TodaysProfit = prices[i]-minPrice;
+
+        if(TodaysProfit > MaxProfit)
+            MaxProfit = TodaysProfit;
+
+
+        //recursion
+
+        profit(prices,i+1,minPrice,MaxProfit);
+
+
+    }
+
+    int maxProfit(vector<int>& prices) {
+        int minPrice=INT_MAX;
+        int MaxProfit = INT_MIN;
+
+        profit(prices,0,minPrice,MaxProfit);
+
+        return MaxProfit;
+        
+
+    }
+};
