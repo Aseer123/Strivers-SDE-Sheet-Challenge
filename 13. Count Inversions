@@ -1,0 +1,47 @@
+long long getInversions(long long *arr, int n){
+
+    int low=0;
+
+    int high=n-1;
+
+    long long cnt=0;
+
+    while(low!=high){
+
+        if(low+1==high){
+
+            if(arr[low]>arr[high]){
+
+                cnt++;
+
+            }
+
+            high=n-1;
+
+            low++;
+
+        }
+
+ 
+
+        if(arr[low]>arr[high]){
+
+            cnt++;
+
+            high--;
+
+        }
+
+        else{
+
+            high--;
+
+        }
+
+        
+
+    }
+
+    return cnt;
+
+}
