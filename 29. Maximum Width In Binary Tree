@@ -8,7 +8,7 @@
        public:
         T val;
         TreeNode<T> *left;
-        TreeNode<T> *right;
+        TreeNode<T> *right; 
 
         TreeNode(T val) {
             this->val = val;
