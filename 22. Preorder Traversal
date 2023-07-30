@@ -1,6 +1,6 @@
 #include <bits/stdc++.h> 
 /*
-    Following is Binary Tree Node structure:
+    Following is Binary Tree Node structures:
     class TreeNode
     {
     public:
