@@ -1,0 +1,21 @@
+class Solution:
+    def maxFrequency(self, nums: List[int], k: int) -> int:
+
+        nums.sort();
+
+        l, r =0,0;
+
+        total_sum, result = 0,0;
+
+        while r < nums.length():
+            total_sum += nums[r];
+
+            while(nums[r]*(r-l+1) > total_sum + k):
+                total -= 
+                l += 1
+            
+            result = max(result,r-l+1)
+            r += 1;
+
+
+    return result;
