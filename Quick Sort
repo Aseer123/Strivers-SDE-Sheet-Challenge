@@ -1,0 +1,45 @@
+/*
+	The function is called with the parameters:
+	quickSort(input, 0, size - 1);
+
+*/
+
+int partitionElement(int input[], int low, int hi){
+
+	int pivot = input[low];
+	int i = low;
+	int j = hi;
+
+	while(i<j){
+
+		while(input[i]<=pivot && i<hi)
+			{
+				i++;
+			}
+		while(input[j]>pivot && j>low)
+			{
+				j--;
+			}
+		
+		if(i<j) 
+			swap(input[i],input[j]);
+
+	}
+
+	swap(input[low],input[j]);
+	return j;
+}
+
+void quickSort(int input[], int low, int hi) {
+
+	if(low<hi)
+	{
+		int pivot_index = partitionElement(input,low,hi);
+
+		quickSort(input, low, pivot_index-1);
+
+		quickSort(input, pivot_index+1 ,hi);
+	}
+	
+}
+
