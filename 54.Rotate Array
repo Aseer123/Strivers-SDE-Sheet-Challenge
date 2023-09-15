@@ -1,0 +1,15 @@
+class Solution {
+public:
+    void rotate(vector<int>& nums, int k) {
+
+        int n = nums.size();
+        k = k%n; //if suppose 7 elements and k = 15 then i.e. 7+7+1 rotataions -->7rotations  here means again the same array 
+
+        reverse(nums.begin(),nums.end());
+
+        reverse(nums.begin(),nums.begin()+k);
+
+        reverse(nums.begin()+k,nums.end());
+
+    }
+};
