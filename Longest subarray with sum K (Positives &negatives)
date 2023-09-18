@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+int longestSubarrayWithSumK(vector<int> a, long long k) {
+
+    int n = a.size();
+    
+    map<long long,int> preMapsum;
+
+    int maxlength = 0;
+
+    long long sum = 0;
+
+    for(int i=0;i<n;i++){
+        
+        sum += a[i];
+        
+        if(sum==k)
+            maxlength = max(maxlength,i+1);
+
+        long long rem = sum-k;
+
+        if(preMapsum.find(rem) != preMapsum.end()){
+        
+            int length = i - preMapsum[rem];
+            maxlength = max(maxlength,length);
+        
+        }
+
+        if(preMapsum.find(sum) == preMapsum.end()){
+            preMapsum[sum] = i;
+        }
+        
+    }
+    
+
+    return maxlength;
+
+    
+}
