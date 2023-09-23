@@ -1,0 +1,31 @@
+int longestSubarrayWithSumK(vector<int> a, long long k) {
+    
+    int left=0;
+    int right=0;
+    int n = a.size();
+    int maxlength = 0;
+
+    long long sum = a[0];
+    
+    while(right<n){
+        while(sum>k && left<=right)
+        {
+            sum -= a[left];
+            left++;
+        }
+
+        if(sum==k)
+            maxlength = max(maxlength,right-left+1);
+
+        if(right<n){
+            right++;
+            sum += a[right];
+        }
+        
+        
+        
+    }
+    
+    return maxlength;
+    
+}
